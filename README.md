@@ -21,3 +21,6 @@ Home fragment show all image drawed
 Draw fragment
 ![Screenshot_20230815-144614 1](https://github.com/PhanDuc2781/Draw/assets/94525505/8112106f-1d54-44f9-ad11-e1905c780dd1)
 
+Show image can delete it 
+![Screenshot_20230815-144623 1](https://github.com/PhanDuc2781/Draw/assets/94525505/a4fc91ec-3fe9-49ae-8fd8-b9908ead38e3)
+
