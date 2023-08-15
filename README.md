@@ -17,3 +17,7 @@ MVVM architecture
 
 Home fragment show all image drawed
 ![Screenshot_20230815-144553 2](https://github.com/PhanDuc2781/Draw/assets/94525505/04bd633b-5f7f-4835-80f8-50e471e6300d)
+
+Draw fragment
+![Screenshot_20230815-144614 1](https://github.com/PhanDuc2781/Draw/assets/94525505/8112106f-1d54-44f9-ad11-e1905c780dd1)
+
