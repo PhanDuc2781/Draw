@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BrushView">
+        <attr name="icon" format="reference"/>
+        <attr name="icon_selected" format="reference"/>
+        <attr name="isSelected" format="boolean"/>
+    </declare-styleable>
+</resources>

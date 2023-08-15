@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/bg_radius_50"
+    android:layout_height="41dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:weightSum="5">
+
+        <com.example.draw.customview.BrushChooseSize
+            android:id="@+id/brush_pen_1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:icon="@drawable/brush_size_1"
+            app:icon_selected="@drawable/brush_selected_1"
+            app:isSelected="false"/>
+
+        <com.example.draw.customview.BrushChooseSize
+            android:id="@+id/brush_pen_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:icon="@drawable/brush_size_2"
+            app:icon_selected="@drawable/brush_selected_2"
+            app:isSelected="false"/>
+
+        <com.example.draw.customview.BrushChooseSize
+            android:id="@+id/brush_pen_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:icon="@drawable/brush_size_3"
+            app:icon_selected="@drawable/brush_selected_3"
+            app:isSelected="false"/>
+
+        <com.example.draw.customview.BrushChooseSize
+            android:id="@+id/brush_pen_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:icon="@drawable/brush_size_4"
+            app:icon_selected="@drawable/brush_selected_4"
+            app:isSelected="false"/>
+
+        <com.example.draw.customview.BrushChooseSize
+            android:id="@+id/brush_pen_5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:icon="@drawable/brush_size_5"
+            app:icon_selected="@drawable/brush_selected_5"
+            app:isSelected="false"/>
+    </LinearLayout>
+
+</LinearLayout>

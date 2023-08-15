@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_color_brush"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:civ_border_width="1dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="3dp"
+        app:civ_border_color="@color/choose_color"
+        android:src="@drawable/choose_color"/>
+
+</RelativeLayout>
