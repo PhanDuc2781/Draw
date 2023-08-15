@@ -7,7 +7,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
 @Entity(tableName = "image")
 data class Image(
     @PrimaryKey
@@ -17,4 +16,4 @@ data class Image(
 
     @ColumnInfo(name = "url")
     val url: String
-) : Parcelable
+) : java.io.Serializable

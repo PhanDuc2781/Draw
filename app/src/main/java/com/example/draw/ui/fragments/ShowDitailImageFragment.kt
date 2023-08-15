@@ -6,33 +6,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.draw.R
 import com.example.draw.databinding.FragmentShowDitailImageBinding
 import com.example.draw.entities.Image
+import com.example.draw.utils.Util
+import com.example.draw.viewmodel.ImageViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 @Suppress("DEPRECATION")
 class ShowDitailImageFragment : Fragment() {
-    private var _binding: FragmentShowDitailImageBinding? = null
-    private val binding get() = _binding
+    private lateinit var binding: FragmentShowDitailImageBinding
+    private val imageViewModel: ImageViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentShowDitailImageBinding.inflate(inflater , container , false)
+        binding = FragmentShowDitailImageBinding.inflate(inflater , container , false)
 
-        val images = arguments?.getParcelableArray("Images")
-        val position = arguments?.getInt("Position")
+        val image = arguments?.getSerializable("image") as Image
 
-        Toast.makeText(requireContext() , images?.size.toString() + position.toString() , Toast.LENGTH_SHORT).show()
-        return binding?.root
+        binding.image.setImageBitmap(Util.stringToBitmap(image.url))
+
+        binding.txtDelete.setOnClickListener {
+            imageViewModel.delete(image)
+            findNavController().popBackStack()
+        }
+
+        binding.imageBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        return binding.root
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null
     }
 
 }

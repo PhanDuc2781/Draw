@@ -30,10 +30,11 @@
             android:textColor="#FF5722"/>
     </RelativeLayout>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+    <ImageView
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:layout_margin="5dp"/>
 
 

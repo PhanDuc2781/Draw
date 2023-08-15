@@ -309,6 +309,19 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
+        <TextView
+            android:id="@+id/txt_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:textStyle="bold"
+            android:textColor="#FF5722"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_save_draw"
+            tools:ignore="MissingConstraints" />
+
         <ImageView
             android:id="@+id/img_redo"
             android:layout_width="wrap_content"
@@ -316,7 +329,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
             android:src="@drawable/ic_redo_black"
-            app:layout_constraintEnd_toStartOf="@+id/txt_save_draw"
+            app:layout_constraintEnd_toStartOf="@+id/txt_reset"
             app:layout_constraintTop_toTopOf="@+id/headerView"
             tools:ignore="MissingConstraints" />
 

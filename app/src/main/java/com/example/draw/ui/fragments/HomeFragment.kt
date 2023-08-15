@@ -34,22 +34,22 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_drawFragment)
         }
 
+        adapterImage = ImageAdapter {image->
+            val bundle = Bundle().apply {
+                putSerializable("image" , image)
+            }
+            findNavController().navigate(R.id.action_homeFragment_to_showDitailImageFragment , bundle)
+        }
+
+        binding?.recImage?.apply {
+            layoutManager = GridLayoutManager(requireContext() , 2)
+            setHasFixedSize(true)
+            adapter = adapterImage
+        }
+
+        //observe data change to fill in recycleView
         imageViewModel.listImages.observe(viewLifecycleOwner , Observer {
-            adapterImage = ImageAdapter {position->
-                val bundel = Bundle().apply {
-                    putParcelableArrayList("Images" , ArrayList(it))
-                    putInt("Position" , position)
-                }
-                findNavController().navigate(R.id.action_homeFragment_to_showDitailImageFragment , bundel)
-            }
             adapterImage.setUpList(it)
-
-            binding?.recImage?.apply {
-                layoutManager = GridLayoutManager(requireContext() , 2)
-                setHasFixedSize(true)
-                adapter = adapterImage
-            }
-
         })
 
         return binding?.root

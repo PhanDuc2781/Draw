@@ -118,7 +118,7 @@ class DrawFragment : Fragment() {
 
                 val isPositionSelectedAnimation = BooleanArray(optionDraws.size)
 
-                if (!isPositionSelectedAnimation[index]) {
+                if (!isPositionSelectedAnimation[index] && index != 5) {
                     if (imageView.scaleX == 1.0f && imageView.scaleY == 1.0f) {
                         imageView.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.move_up))
                     } else {
@@ -134,6 +134,10 @@ class DrawFragment : Fragment() {
         }
 
         optionDraws[0].performClick()
+
+        binding.txtReset.setOnClickListener {
+            binding.raswView.rasmContext.clear()
+        }
 
         binding.raswView.rasmContext
             .state
