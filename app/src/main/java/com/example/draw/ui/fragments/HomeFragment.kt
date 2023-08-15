@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         }
 
         //observe data change to fill in recycleView
-        imageViewModel.listImages.observe(viewLifecycleOwner , Observer {
+        imageViewModel.listImage.observe(viewLifecycleOwner , Observer {
             adapterImage.setUpList(it)
         })
 

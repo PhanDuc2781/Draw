@@ -1,7 +1,6 @@
 package com.example.draw.ui.fragments
 
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,19 +29,19 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DrawFragment : Fragment() {
 
-    lateinit var binding: FragmentDrawBinding
+    private lateinit var binding: FragmentDrawBinding
     private val imageViewModel : ImageViewModel by viewModels()
 
     private var selectedPen: ImageView? = null
     private val brushSizesMap: MutableMap<ImageView, Float> = mutableMapOf()
 
-    var isPositionSelected = false
-    var selectedPosition = -1
+    private var isPositionSelected = false
+    private var selectedPosition = -1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentDrawBinding.inflate(inflater , container , false)
 
@@ -99,19 +97,19 @@ class DrawFragment : Fragment() {
                     binding.raswView.rasmContext.brushConfig.size = selectedPenSize
                 }
 
-                val pencelVisivility = if (index == 0) View.VISIBLE else View.GONE
-                val penVisivility = if (index == 1) View.VISIBLE else View.GONE
-                val penMakerVisivility = if (index == 2) View.VISIBLE else View.GONE
-                val penBoldVisivility = if (index == 3) View.VISIBLE else View.GONE
-                val eraserVisivility = if (index == 4) View.VISIBLE else View.GONE
-                val chooseColorVisivility = if (index == 5) View.VISIBLE else View.GONE
+                val pencilVisibility = if (index == 0) View.VISIBLE else View.GONE
+                val penVisibility = if (index == 1) View.VISIBLE else View.GONE
+                val penMakerVisibility = if (index == 2) View.VISIBLE else View.GONE
+                val penBoldVisibility = if (index == 3) View.VISIBLE else View.GONE
+                val eraserVisibility = if (index == 4) View.VISIBLE else View.GONE
+                val chooseColorVisibility = if (index == 5) View.VISIBLE else View.GONE
 
-                binding.constrainColor.visibility = chooseColorVisivility
-                binding.constrainBrushPencel.visibility = pencelVisivility
-                binding.constrainBrushPen.visibility = penVisivility
-                binding.constrainBrushPenMaker.visibility = penMakerVisivility
-                binding.constrainBrushPenBold.visibility = penBoldVisivility
-                binding.constrainEraser.visibility = eraserVisivility
+                binding.constrainColor.visibility = chooseColorVisibility
+                binding.constrainBrushPencel.visibility = pencilVisibility
+                binding.constrainBrushPen.visibility = penVisibility
+                binding.constrainBrushPenMaker.visibility = penMakerVisibility
+                binding.constrainBrushPenBold.visibility = penBoldVisibility
+                binding.constrainEraser.visibility = eraserVisibility
 
                 binding.imgChooseimage.borderColor =
                     if (index == 5) requireActivity().getColor(R.color.choose_color) else requireActivity().getColor(R.color.un_choose_color)
@@ -187,7 +185,7 @@ class DrawFragment : Fragment() {
                         })
                     .setNegativeButton(
                         getString(R.string.cancle)
-                    ) { dialogInterface, i -> dialogInterface.dismiss() }
+                    ) { dialogInterface, _ -> dialogInterface.dismiss() }
                     .attachAlphaSlideBar(true)
                     .attachBrightnessSlideBar(true)
                     .setBottomSpace(12)
@@ -210,7 +208,7 @@ class DrawFragment : Fragment() {
         binding.raswView.rasmContext.brushColor = colorBrush
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+
     private fun brushPencelAction() {
         val brushPencelSizes = arrayOf(
             binding.layoutBrushPencel.brushPencel1,
@@ -223,7 +221,6 @@ class DrawFragment : Fragment() {
         setSizes(brushPencelSizes, 0.1f)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun brushPenBoldAction() {
         val brushPenBoldSizes = arrayOf(
             binding.layoutPenBold.brushPenBold1,
@@ -236,7 +233,6 @@ class DrawFragment : Fragment() {
         setSizes(brushPenBoldSizes, 0.1f)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun brushMakerAction() {
         val brushMakerSizes = arrayOf(
             binding.layoutPenMaker.brushPenMaker1,
@@ -249,7 +245,6 @@ class DrawFragment : Fragment() {
         setSizes(brushMakerSizes, 0.1f)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun brushPenAction() {
         val brushPenSizes = arrayOf(
             binding.layoutPen.brushPen1,
@@ -262,7 +257,6 @@ class DrawFragment : Fragment() {
         setSizes(brushPenSizes, 0.1f)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun eraserAction() {
         val eraserSizes = arrayOf(
             binding.layoutEraser.eraser1,
@@ -275,7 +269,6 @@ class DrawFragment : Fragment() {
         setSizes(eraserSizes, 0.1f)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun setSizes(
         sizes: Array<BrushChooseSize>,
         defaultSizeIndex: Float,

@@ -15,20 +15,17 @@ import javax.inject.Inject
 class ImageViewModel @Inject constructor(private val imageRepository: ImageRepository) :
     ViewModel() {
 
-    var job: Job? = null
-    val listImages: LiveData<out MutableList<Image>>
-        get() = imageRepository.getAllImage()
+    private val _listImages = imageRepository.getAllImage()
+    val listImage: LiveData<out MutableList<Image>> = _listImages
 
     fun insert(image: Image) {
-        job?.cancel()
-        job = viewModelScope.launch {
+        viewModelScope.launch {
             imageRepository.insert(image)
         }
     }
 
     fun delete(image: Image) {
-        job?.cancel()
-        job = viewModelScope.launch {
+        viewModelScope.launch {
             imageRepository.delete(image)
         }
     }
