@@ -15,5 +15,5 @@ MVVM architecture
     .Dependency Injection(DI)
     .Repository
 
-    
-![alt text]([http://url/to/img.png](https://firebasestorage.googleapis.com/v0/b/test-firebase-2efa0.appspot.com/o/image%2FScreenshot_20230815-144553%5B1%5D.png?alt=media&token=1f323564-661e-4f52-aa61-03763fea8b4f)https://firebasestorage.googleapis.com/v0/b/test-firebase-2efa0.appspot.com/o/image%2FScreenshot_20230815-144553%5B1%5D.png?alt=media&token=1f323564-661e-4f52-aa61-03763fea8b4f)
+Home fragment show all image drawed
+![Screenshot_20230815-144553 2](https://github.com/PhanDuc2781/Draw/assets/94525505/04bd633b-5f7f-4835-80f8-50e471e6300d)
