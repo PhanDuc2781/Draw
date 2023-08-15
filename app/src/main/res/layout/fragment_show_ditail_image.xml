@@ -16,14 +16,15 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back_app"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"/>
+            android:padding="20dp" />
 
         <TextView
             android:id="@+id/txt_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
-            android:textSize="16sp"
+            android:text="@string/delete"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"

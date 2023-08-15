@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Vẽ hình</string>
+    <string name="draw">Vẽ hình</string>
+    <string name="ok">Ok</string>
+    <string name="cancle">Hủy bỏ</string>
+    <string name="reset">Xóa hết</string>
+    <string name="save">Lưu</string>
+    <string name="delete">Xóa ảnh</string>
+</resources>
