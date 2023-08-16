@@ -166,7 +166,7 @@ class DrawFragment : Fragment() {
     private fun returnBitmapDraw() {
         val drawingBitmap = binding.raswView.rasmContext.exportRasm()
         val image = Util.bitmapToString(drawingBitmap)
-            ?.let { Image(System.currentTimeMillis() , it) }
+            ?.let { Image(0 , it) }
         image?.let { imageViewModel.insert(it) }
         findNavController().popBackStack()
     }

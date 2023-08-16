@@ -9,15 +9,15 @@ import javax.inject.Inject
 
 class ImageRepository @Inject constructor(private val dao: DAO) {
 
-    fun getAllImage(): LiveData<MutableList<Image>>{
+    fun getAllImage(): LiveData<MutableList<Image>> {
         return dao.getAll()
     }
 
-    suspend fun insert(image: Image) = withContext(Dispatchers.IO){
+    suspend fun insert(image: Image) = withContext(Dispatchers.IO) {
         dao.insert(image)
     }
 
-    suspend fun delete(image: Image) = withContext(Dispatchers.IO){
+    suspend fun delete(image: Image) = withContext(Dispatchers.IO) {
         dao.delete(image)
     }
 }
