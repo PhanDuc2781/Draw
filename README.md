@@ -11,6 +11,8 @@ MVVM architecture
 
     .Room DB insert , delele , query image
     .Navigation component use only activity
+    .Viewbinding
+    .Coroutines
     .ViewMode , livedata 
     .Dependency Injection(DI)
     .Repository
